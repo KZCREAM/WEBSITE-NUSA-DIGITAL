@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran SMK 2025</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      margin-top: 5px;
+    }
+
+    input[type="file"] {
+      background: transparent;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #cccccc;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 25px;
+      background-color: #00cec9;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00b894;
+    }
+
+    .success {
+      display: none;
+      margin-top: 20px;
+      background-color: #00b894;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulir Pendaftaran Siswa Baru SMK 2025</h2>
+    <form id="pendaftaranForm">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+      <label for="gender">Jenis Kelamin</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Pilih Jenis Kelamin --</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+      </select>
+
+      <label for="lahir">Tanggal Lahir</label>
+      <input type="date" id="lahir" name="lahir" required>
+
+      <label for="asal">Asal Sekolah</label>
+      <input type="text" id="asal" name="asal" placeholder="Contoh: SMPN 1 Cipanas" required>
+
+      <label for="jurusan">Jurusan Pilihan</label>
+      <select id="jurusan" name="jurusan" required>
+        <option value="">-- Pilih Jurusan --</option>
+        <option value="TKJ">TKJ - Teknik Komputer Jaringan</option>
+        <option value="RPL">RPL - Rekayasa Perangkat Lunak</option>
+        <option value="TBSM">TBSM - Teknik & Bisnis Sepeda Motor</option>
+        <option value="AKL">AKL - Akuntansi Keuangan Lembaga</option>
+      </select>
+
+      <label for="alamat">Alamat Lengkap</label>
+      <textarea id="alamat" name="alamat" rows="3" placeholder="Tulis alamat lengkap kamu..." required></textarea>
+
+      <label for="foto">Upload Foto (opsional)</label>
+      <input type="file" id="foto" name="foto" accept="image/*">
+
+      <button type="submit">Kirim Pendaftaran</button>
+    </form>
+    <div class="success" id="successMsg">✅ Pendaftaran berhasil! Kami akan menghubungi Anda segera.</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('pendaftaranForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Simulasi validasi dan pengiriman
+      successMsg.style.display = 'block';
+      form.reset();
+
+      // Sembunyikan pesan setelah 5 detik
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
